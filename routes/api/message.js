@@ -15,7 +15,7 @@ router.get("/", (req, res) => {
     });
 });
 
-router.post("/send", (req, res) => {
+router.post("/", (req, res) => {
   if (!req.body) {
     return res.status(400).send({
       message: "Message can not be empty"
