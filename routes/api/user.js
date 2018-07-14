@@ -47,9 +47,9 @@ router.post("/", (req, res) => {
     });
 });
 
-router.post("/:id/speakers", (req, res) => {
+router.get("/:id/speakers", (req, res) => {
   const id = req.params.id;
-  UserService.spokeWith(id)
+  UserService.findSpeakers(id)
     .then(people => {
       res.status(200).send(people);
     })

@@ -14,6 +14,13 @@ class UserRepository extends GeneralRepository {
         });
         return user.save();
     }
+
+    findByIds(ids) {
+        return User.find()
+        .where('_id')
+        .in(ids)
+        .exec();
+    }
 }
 
 module.exports = UserRepository;
