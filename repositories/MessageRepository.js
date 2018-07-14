@@ -17,8 +17,8 @@ class MessageRepository extends GeneralRepository {
 
     findSpeakers(userId) {
         return Message.find()
-        .distinct('receiverId')
         .where('senderId').equals(userId)
+        .distinct('receiverId')
         .exec()
     }
 }
