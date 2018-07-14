@@ -16,8 +16,10 @@ class MessageRepository extends GeneralRepository {
     }
 
     findSpeakers(userId) {
-        return Message.distinct('receiverId').find({senderId: userId}, 'receiverId')
-        .exec();
+        return Message.find()
+        .distinct('receiverId')
+        .where('senderId').equals(userId)
+        .exec()
     }
 }
 

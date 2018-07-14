@@ -21,8 +21,5 @@ exports.delete = userId =>
 
 exports.findSpeakers = userId => {
     return MessageService.message.findSpeakers(userId)
-    // .then(speakers => {
-    //     let arr = speakers.map(speaker => new mongoose.Types.ObjectId(speaker.id));
-    //     console.log(user.findByIds(arr));
-    // });
+    .then(arr => user.findByIds(arr));
 }
